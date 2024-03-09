@@ -3,5 +3,15 @@
 # Back-end for chat-bot
 
 def chat_bot():
-    print("testing .. this is the back-end")
+    print("")
 chat_bot()
+
+
+def input():
+    print("this is the input field")
+input()
+
+def output():
+    print("this is the output field")
+output()
+
