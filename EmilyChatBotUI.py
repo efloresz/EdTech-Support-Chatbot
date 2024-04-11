@@ -26,7 +26,7 @@ class ChatBotUI:
             "How can I assist you today?",
             "What can I do for you?",
             "How may I help you?",
-            "How can I help you "
+            "How can I help you? "
         ]
 
         # Rule-based responses
@@ -38,7 +38,29 @@ class ChatBotUI:
             "Why is this course important for SWE?":
             "You focus on the user and business requirments needed during the intial development process."
         }
-        
+
+        filename ="/Users/emilyflores/Desktop/Work/EdTechChatBot/cis260.txt"
+        self.load_cis260(filename)
+
+    def load_cis260(self, filename):
+        try:
+            with open(filename, "r") as file:
+                for line_number, line in enumerate(file, 1):  
+                    if line.strip():
+                        parts = line.strip().split("|")  
+                    if len(parts) == 2:  
+                        question, answer = parts
+                        self.rule_responses[question.strip()] = answer.strip()
+                    else:
+                        print("Invalid format in line", line_number, ":", line.strip())
+        except FileNotFoundError:             
+            print("File not found:", filename)   
+        except Exception as e:
+            print("An error has occurred while loading responses:", e)
+
+
+
+
     def send_message(self):
         # TODO: fix the intital response (outputs bot_responses)
         message = self.entry_field.get()
