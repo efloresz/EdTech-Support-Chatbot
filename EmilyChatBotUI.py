@@ -7,7 +7,7 @@ class ChatBotUI:
     def __init__(self, master):
         self.master = master
         master.title("Learnify ChatBot")
-        master.configure(bg="#FF69B4")
+        master.configure(bg="#FFB6C1")
 
         self.message_listbox = tk.Listbox(master, width=80, height=30)
         self.message_listbox.grid(row=0, column=0, padx=10, pady=10, columnspan=2)
