@@ -6,7 +6,7 @@ from nltk.chat.util import Chat, reflections
 class ChatBotUI:
     def __init__(self, master):
         self.master = master
-        master.title("Learnify ChatBot")
+        master.title("Learnify Predictive ChatBot")
         master.configure(bg="#FFB6C1")
 
         self.message_listbox = tk.Listbox(master, width=80, height=30)
