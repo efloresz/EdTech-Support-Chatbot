@@ -2,6 +2,12 @@ import random
 import tkinter as tk
 import nltk
 from nltk.chat.util import Chat, reflections
+import torch
+from transformers import BertTokenizer, BertForQuestionAnswering
+
+# load pre-trained BERT model and tokenizer
+tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+model = BertForQuestionAnswering.from_pretrained('bert-large-uncased')
 
 class ChatBotUI:
     def __init__(self, master):
